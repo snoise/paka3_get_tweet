@@ -26,15 +26,23 @@ jQuery(function($) {
 							
 								str_profile = obj.find('.twt').find('.profile').html();
 								str_tweet   = obj.find('.twt').children('.tweet').html();
+								str_img = "";
 								if( obj.find('.twt').children('.img').length != 0 ){
 									str_img  = obj.find('.twt').children('.img').html();
 								}
-	
+								
+							if(str_img){
 								str   += "<ul class='twt'>"
 											 + "<li class='img'>" +str_img+ "</li>"
 											 + "<li class='profile'>" +str_profile+ "</li>"
 											 + "<li class='tweet'>" +str_tweet+ "</li>"
 											 + "</ul>";
+							}else{
+								str   += "<ul class='twt'>"
+											 + "<li class='profile'>" +str_profile+ "</li>"
+											 + "<li class='tweet'>" +str_tweet+ "</li>"
+											 + "</ul>";
+							}
 
 						});
 						
