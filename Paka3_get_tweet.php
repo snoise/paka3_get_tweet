@@ -17,16 +17,13 @@ class Paka3_get_tweet
 {
 	//###########################################
 	//APIキー
-	/*
+	
 	private $apiKey = '***********************' ;
 	private $apiSecret = '***********************' ;
 	private $accessToken = '***********************' ;
 	private $accessTokenSecret = '************************' ;
-	*/
-	private $apiKey = '0Pg4r2IVZwbOau8ObUYbQRlBx' ;
-	private $apiSecret = 'tMmuULIEnV4AtrIba19HR0fLzXWjaCgU9PaS23TkvQLgrRDxVT' ;
-	private $accessToken = '1098563582-eLb4iZ0lpDgz7fxeoLmlaFivKwLrv4eAREydsuo' ;
-	private $accessTokenSecret = 'ksHNdcJnKM5qbiwM9pbfLbnYWd2mChn9156Q5ERWBX5oq' ;
+	
+
 	//###########################################
 	private $lang = "ja";	//言語
 	private $word = "";				//検索ワード
