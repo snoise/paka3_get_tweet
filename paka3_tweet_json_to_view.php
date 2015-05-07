@@ -31,7 +31,8 @@ class Paka3_tweet_json_to_view{
 			if( $val->entities->media ) {
 				$tweet['img']="";
 				foreach( $val->entities->media as $imgObj ) {
-					$tweet['img'] .= $imgObj->media_url ? "<img class='img' src=".$imgObj->media_url."/>" : "";
+					
+					$tweet['img'] .= $imgObj->media_url ? "<img class='img' src='".$imgObj->media_url."' />" : "";
 					$tweet['imgURL'] .= $imgObj->media_url ;
 				}
 			}
@@ -65,16 +66,17 @@ class Paka3_tweet_json_to_view{
 			$tweet['link'] = $tweet['user_url']."/statuses/".$tweet['tweet_id'];
 			
 			//9.プロフィール画像
-			$tweet['profile_img'] = "<img class='twt_p_img' src=".$val->user->profile_image_url."/>";
+			$tweet['profile_img'] = "<img class='twt_p_img' src=".$val->user->profile_image_url." />";
 
-			array_push($arrayData,$tweet);
+			//array_push($arrayData,$tweet);
+			array_unshift($arrayData,$tweet);
 		}
 			
 		 return $arrayData;
 	}
 
 	function post_css() {
-			echo <<< EOS
+				echo <<< EOS
 				<style  type="text/css">
 					ul.paka3Tweet,
 					ul.paka3Tweet li,
@@ -83,6 +85,7 @@ class Paka3_tweet_json_to_view{
 						margin:0 !important;
 						padding:0 !important;
 						list-style-type : none;
+						background:#fff;
 					}
 					ul.twt{
 						border:1px solid;
@@ -127,6 +130,7 @@ class Paka3_tweet_json_to_view{
 					 ul.twt a.imglink{
 					 		display:block;
 					 }
+
 				</style>
 EOS;
 		}
